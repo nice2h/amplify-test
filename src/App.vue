@@ -37,8 +37,10 @@ export default {
       API.get(apiName, path, myInit)
         .then((response) => {
           console.log(response);
-          data.role = response.data[0].role;
-          data.status = true;
+          if (response.data.length) {
+            data.role = response.data[0].role;
+            data.status = true;
+          }
         })
         .catch((error) => {
           console.log(error.response);
