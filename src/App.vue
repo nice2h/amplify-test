@@ -1,16 +1,21 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Amplify Test Vue.js App" />
+  <button @click="getRole">get Role from DynamoDB</button>
+  <div v-if="data.status" class="role">
+    {{ data.role }}
+  </div>
+  <!-- <HelloWorld msg="Welcome to Amplify Test Vue.js App" /> -->
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import { reactive } from "vue";
+// import HelloWorld from "./components/HelloWorld.vue";
 import { API } from "aws-amplify";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    // HelloWorld,
   },
   setup() {
     const eventName = "test";
@@ -20,14 +25,31 @@ export default {
       headers: {},
       response: true,
     };
+    const data = reactive({
+      status: false,
+      response: false,
+      role: false,
+    });
 
-    API.get(apiName, path, myInit)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error.response);
-      });
+    const getRole = () => {
+      data.role = "Loading...";
+      data.status = true;
+      API.get(apiName, path, myInit)
+        .then((response) => {
+          console.log(response);
+          data.role = response.data[0].role;
+          data.status = true;
+        })
+        .catch((error) => {
+          console.log(error.response);
+          data.status = false;
+        });
+    };
+
+    return {
+      data,
+      getRole,
+    };
   },
 };
 </script>
@@ -40,5 +62,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.role {
+  margin-top: 10px;
+  font-size: 20px;
+  color: green;
 }
 </style>
