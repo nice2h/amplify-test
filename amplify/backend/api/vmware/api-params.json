@@ -1,0 +1,35 @@
+{
+  "paths": [
+    {
+      "name": "/test",
+      "lambdaFunction": "vmware",
+      "privacy": {
+        "open": true
+      },
+      "policyResourceName": "/test"
+    }
+  ],
+  "resourceName": "vmware",
+  "apiName": "vmware",
+  "functionArns": [
+    {
+      "lambdaFunction": "vmware"
+    }
+  ],
+  "privacy": {
+    "auth": 0,
+    "unauth": 0,
+    "authRoleName": "amplify-amplifytest-staging-50922-authRole",
+    "unAuthRoleName": "amplify-amplifytest-staging-50922-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "vmware",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+    "tableName": "books",
+    "partitionKeyName": "isbn",
+    "partitionKeyType": "N",
+    "sortKeyName": "name",
+    "sortKeyType": "S"
+}

@@ -1,0 +1,55 @@
+{
+    "paths": [
+        {
+            "name": "/book/{isbn}",
+            "lambdaFunction": "amplifyLambda",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/book/*"
+        },
+        {
+            "name": "/todo",
+            "lambdaFunction": "amplifyTest",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/todo"
+        }
+    ],
+    "resourceName": "amplifyREST",
+    "apiName": "amplifyREST",
+    "functionArns": [
+        {
+            "lambdaFunction": "amplifyLambda"
+        },
+        {
+            "lambdaFunction": "amplifyTest"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-amplifytest-staging-50922-authRole",
+        "unAuthRoleName": "amplify-amplifytest-staging-50922-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "amplifyLambda",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "amplifyTest",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ],
+    "uuid": "2a417592"
+}

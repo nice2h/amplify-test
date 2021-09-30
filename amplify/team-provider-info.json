@@ -1,0 +1,31 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplifytest-staging-50922-authRole",
+      "UnauthRoleArn": "arn:aws:iam::320757046524:role/amplify-amplifytest-staging-50922-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::320757046524:role/amplify-amplifytest-staging-50922-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-amplifytest-staging-50922-deployment",
+      "UnauthRoleName": "amplify-amplifytest-staging-50922-unauthRole",
+      "StackName": "amplify-amplifytest-staging-50922",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:320757046524:stack/amplify-amplifytest-staging-50922/93226880-21ac-11ec-990f-06794c0fdd17",
+      "AmplifyAppId": "d2jrk0f4pxrzbm"
+    },
+    "categories": {
+      "function": {
+        "amplifyLambda": {
+          "deploymentBucketName": "amplify-amplifytest-staging-50922-deployment",
+          "s3Key": "amplify-builds/amplifyLambda-595056332b3765774549-build.zip"
+        },
+        "amplifyTest": {
+          "deploymentBucketName": "amplify-amplifytest-staging-50922-deployment",
+          "s3Key": "amplify-builds/amplifyTest-5765375364526c304d32-build.zip"
+        },
+        "vmware": {
+          "deploymentBucketName": "amplify-amplifytest-staging-50922-deployment",
+          "s3Key": "amplify-builds/vmware-37554f6d505a7265496a-build.zip"
+        }
+      }
+    }
+  }
+}

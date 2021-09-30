@@ -5,11 +5,29 @@
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
+import { API } from "aws-amplify";
 
 export default {
   name: "App",
   components: {
     HelloWorld,
+  },
+  setup() {
+    const eventName = "SampleEventName";
+    let apiName = "vmware";
+    let path = "/test" + eventName;
+    let myInit = {
+      headers: {},
+      response: true,
+    };
+
+    API.get(apiName, path, myInit)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error.response);
+      });
   },
 };
 </script>

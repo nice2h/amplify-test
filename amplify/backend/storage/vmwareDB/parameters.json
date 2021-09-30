@@ -1,0 +1,7 @@
+{
+    "tableName": "vmware",
+    "partitionKeyName": "name",
+    "partitionKeyType": "S",
+    "sortKeyName": "role",
+    "sortKeyType": "S"
+}
