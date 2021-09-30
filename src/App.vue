@@ -15,7 +15,7 @@ export default {
   setup() {
     const eventName = "SampleEventName";
     let apiName = "vmware";
-    let path = "/test" + eventName;
+    let path = "/test/" + eventName;
     let myInit = {
       headers: {},
       response: true,
