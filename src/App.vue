@@ -13,7 +13,7 @@ export default {
     HelloWorld,
   },
   setup() {
-    const eventName = "SampleEventName";
+    const eventName = "test";
     let apiName = "vmware";
     let path = "/test/" + eventName;
     let myInit = {
